@@ -1,5 +1,30 @@
+<input type="hidden" id="curval" value="2"/>
+<div id="primenum">2</div>
+<button id="nextprime"/>next</button>
+<br/>
 <?php
 foreach ($arrPrimes as $key => $value) {
 	echo $value.'<br/>';
 }
 ?>
+
+
+<script>
+$('#nextprime').on('click', function() {
+    $.ajax({
+        type:"POST",
+        url:"index/ajaxcount",
+        data:{primenum:$('#curval').val()},
+        success:function(results) 
+        {
+    	    $('#primenum').html('');
+	    $('#primenum').html(results);
+	    $('#curval').val(results);
+        },
+        error:function()
+        {
+            console.log('uh oh');
+        }
+    });
+});
+</script>
