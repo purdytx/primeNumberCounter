@@ -17,7 +17,11 @@ class IndexController extends \Phalcon\Mvc\Controller
     */
     public function indexAction()
     {
+	$clPrime = new Prime();
 
+	$arrPrimes = $clPrime->atkins();
+
+	$this->view->setVar("arrPrimes", $arrPrimes);
     }
 
 }
