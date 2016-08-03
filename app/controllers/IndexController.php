@@ -21,6 +21,8 @@ class IndexController extends \Phalcon\Mvc\Controller
 
 	$arrPrimes = $clPrime->atkins();
 
+	$this->assets->addJs("js/indexpg.js");
+
 	$this->view->setVar("arrPrimes", $arrPrimes);
     }
 

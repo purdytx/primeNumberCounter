@@ -1,30 +1,66 @@
-<input type="hidden" id="curval" value="2"/>
-<div id="primenum">2</div>
-<button id="nextprime"/>next</button>
-<br/>
-<?php
-foreach ($arrPrimes as $key => $value) {
-	echo $value.'<br/>';
-}
-?>
+<!-- ==== Walk Em ==== -->
+<div class="container">
+  <div class="row white">
+    <br>
+    <div id="fontcontainer">
+      <h1 class="style-3">Walk Primes 2 - 1,000</h1>
+    </div>
+    <br/>
+    <div class="col-lg-6 centered">
+	<input type="hidden" id="curval" value="2"/>
+        <button type="button" class="btn btn-default btn-lg" id="nextprime">
+          <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Next Prime
+        </button>
+        <button type="button" class="btn btn-default btn-lg" id="restartprime">
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Start Over
+        </button>
+
+    </div>
+    <div class="col-lg-6 centered">
+        <div id="primenum" class="primenumtxt">2</div>
+    </div>
+  </div><!-- end row -->
+</div><!-- end container -->
+
+<!-- ==== SECTION DIVIDER1 -->
+<section class="section-divider textdivider divider3">
+  <div class="container">
+    &nbsp;
+  </div><!-- container -->
+</section><!-- section -->
+
+<!-- ==== all primes ==== -->
+<div class="container">
+  <div class="row white">
+    <br>
+    <div id="fontcontainer">
+      <h1 class="style-3">All Primes 2 - 1,000</h1>
+    </div>
+    <div class="col-lg-12">
+      <div class="pull-left">
+        <p>
+          <?php
+	    $i=0;
+            foreach ($arrPrimes as $key => $value) {
+              //comma formatting
+  	      if ($i > 0) {
+	        echo ', ';
+              }
+              echo $value;
+	      $i++;
+            }
+          ?>
+	</p>
+      </div>
+    </div><!-- end col-lg-12 -->
+  </div><!-- row -->
+</div><!-- container -->
+
+<section class="section-divider textdivider divider4">
+  <div class="container">
+    &nbsp;
+  </div><!-- container -->
+</section><!-- section -->
 
 
-<script>
-$('#nextprime').on('click', function() {
-    $.ajax({
-        type:"POST",
-        url:"index/ajaxcount",
-        data:{primenum:$('#curval').val()},
-        success:function(results) 
-        {
-    	    $('#primenum').html('');
-	    $('#primenum').html(results);
-	    $('#curval').val(results);
-        },
-        error:function()
-        {
-            console.log('uh oh');
-        }
-    });
-});
-</script>
+<?php $this->assets->outputJs(); ?>
