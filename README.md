@@ -21,8 +21,9 @@ Please click the above link to install the latest version of Phalcon.
 
 To run unit tests, please ensure you have composer installed [Composer](https://getcomposer.org/) 
 To install PHPUnit, from root directory: 
-```sh $ 
-composer install 
+
+```sh
+$ composer install 
 ```
 
 #### Includes
