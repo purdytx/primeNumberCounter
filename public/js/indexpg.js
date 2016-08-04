@@ -13,6 +13,13 @@ $('#restartprime').on('click', function() {
     $('#primenum').html('2');
 });
 
+/* resets fetch form */
+$('#restartfetch').on('click', function() {
+    $('#fetchnum').html('');
+    $('#pstart').val('');
+    $('#pend').val('');
+});
+
 /* makes a GET call to api to get the range for fetching */
 $('#fetchprime').on('click', function() {
      $.ajax({
