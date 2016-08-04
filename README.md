@@ -1,6 +1,7 @@
 # Prime Numbers
 
 Basic Web Application that plays with prime numbers, mostly 2 - 1000.
+Sample available at http://www.consumeitall.com
 
 ### Version
 0.0.1
