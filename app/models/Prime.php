@@ -17,6 +17,17 @@ class Prime extends \Phalcon\Mvc\Model
     * @return array
     */
     public function atkins($start=2, $end=1000) {
+	//basic ECV
+	if ($start >= $end) {
+	    return false;
+        }
+        if (!is_numeric($start) || !is_numeric($end)) {
+	    return false;
+        }
+        if ($end > 100000) {
+	    return false;
+        }
+
 	$i = 2;
         //pre-populate the array with all the numbers
 	$arrPrimes = array();
